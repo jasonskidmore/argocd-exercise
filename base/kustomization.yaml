@@ -4,10 +4,8 @@ kind: Kustomization
 # Specify the namespace for all resources
 namespace: nginx
 
-# Specify the namespace for all resources
-namespace: nginx
-
 # List of resource files to be processed by Kustomize
 resources:
+  - namespace.yaml
   - deployment.yaml
   - service.yaml
