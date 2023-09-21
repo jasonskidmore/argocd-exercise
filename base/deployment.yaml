@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment  # Defines a desired state for Pods and ReplicaSets
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 2  # Desired number of pod instances
+  selector:
+    matchLabels:
+      app: nginx  # Labels to match pods for this deployment
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2  # Docker image for the container
+        ports:
+        - containerPort: 80  # Port the container listens on
