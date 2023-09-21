@@ -1,0 +1,11 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+# Base resources to be customized by this overlay
+resources:
+  - ../../base
+
+# Patches to be applied on the base resources
+patchesStrategicMerge:
+  - replica-count-patch.yaml  # Adjusts the number of pod replicas
+  - cpu-limits-patch.yaml     # Sets CPU limits for the container
